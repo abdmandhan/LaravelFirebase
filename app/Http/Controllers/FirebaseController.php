@@ -15,9 +15,10 @@ class FirebaseController extends Controller
             ->withServiceAccount($serviceAccount)
             ->create();
         $db = $firebase->getDatabase();
-        $key = $db->getReference('DB_EVAN/Jam')
+        $key = $db->getReference('DB_EVAN/')
             ->set([
-                'clock' => date("G"),
+                'koneksi'   => 'mati',
+                'jam'       => date("G"),
             ]);
         return $key;
     }
