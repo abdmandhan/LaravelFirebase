@@ -18,7 +18,7 @@ class FirebaseController extends Controller
         $key = $db->getReference('DB_SEMAI/SetAlat/')
             ->set([
                 'jamSekarang'   => date("G"),
-                'statusAlat'    => 'mati',
+                'statusAlat'    => 'Tidak Aktif',
             ]);
         return $key;
     }
