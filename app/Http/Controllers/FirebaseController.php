@@ -15,7 +15,7 @@ class FirebaseController extends Controller
             ->withServiceAccount($serviceAccount)
             ->create();
         $db = $firebase->getDatabase();
-        $key = $db->getReference('DB_SEMAI/setAlat/')
+        $key = $db->getReference('DB_SEMAI/SetAlat/')
             ->set([
                 'jamSekarang'   => date("G"),
                 'statusAlat'    => 'mati',
