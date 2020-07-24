@@ -44,10 +44,13 @@ class setClock extends Command
             ->withServiceAccount($serviceAccount)
             ->create();
         $db = $firebase->getDatabase();
-        $key = $db->getReference('DB_SEMAI/SetAlat/')
+        $key = $db->getReference('DB_SEMAI/SetAlat/jamSekarang/')
             ->set([
-                'jamSekarang'   => date("G"),
-                'statusAlat'    => 'Tidak Aktif',
+                'nilai'   => date("G"),
+            ]);
+        $key = $db->getReference('DB_SEMAI/SetAlat/statusAlat/')
+            ->set([
+                'nilai'   => 'Tidak Aktif',
             ]);
         return $key;
     }
